@@ -13,13 +13,18 @@ export default function ProfileCard({
     bio = "",
     location = "",
     technologies = [],
-    creationDate
-  }
+    creationDate,
+    onViewChange,
+  },
 }) {
   const [isBioVisible, setIsBioVisible] = useState(true);
 
   const handleBioVisibility = () => {
     setIsBioVisible(!isBioVisible);
+
+    if (typeof onViewChange === "function") {
+      onViewChange(!isBioVisible);
+    }
   };
 
   return (
@@ -30,14 +35,14 @@ export default function ProfileCard({
         <span>{posts} posts</span>
         <i className={`status ${isOnline ? "online" : "offline"}`} />
       </div>
-      <div className="details">
+      <div className={`details ${isBioVisible ? "bio" : "technologies"}`}>
         {isBioVisible ? (
           <>
             <h3>Bio</h3>
             <p>{bio !== "" ? bio : "No bio provided yet"}</p>
             <div>
-              <button onClick={handleBioVisibility}>View skills</button>
-              {!!creationDate && <p>Joined: {creationDate}</p>}
+              <button onClick={handleBioVisibility}>View Skills</button>
+              <p className="joined">Joined: {creationDate}</p>
             </div>
           </>
         ) : (
@@ -52,7 +57,7 @@ export default function ProfileCard({
             )}
             <div>
               <button onClick={handleBioVisibility}>View Bio</button>
-              {!!location && <p>Location: {location}</p>}
+              {!!location && <p className="location">Location: {location}</p>}
             </div>
           </>
         )}
@@ -69,6 +74,7 @@ ProfileCard.propTypes = {
     bio: PropTypes.string,
     location: PropTypes.string,
     technologies: PropTypes.arrayOf(PropTypes.string),
-    creationDate: PropTypes.string.isRequired
-  }).isRequired
+    creationDate: PropTypes.string.isRequired,
+    onViewChange: PropTypes.func,
+  }).isRequired,
 };

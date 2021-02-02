@@ -10,7 +10,7 @@ export default function App() {
           name: "Justin Case",
           posts: 45,
           bio:
-            "Hello 👋, my name is Justin. I am UI developer working with React on veriety of Jamstack projects. Part of my time is also dedicated on bloging and open source.",
+            "Hello 👋, my name is Justin. I am UI developer working with React on variety of Jamstack projects. Part of my time is also dedicated to blogging and open source.",
           location: "Copenhagen, Denmark",
           technologies: [
             "Javascript",
