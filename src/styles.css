@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css?family=Abel");
+
+body {
+  margin: 0;
+  font-family: Abel, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #94ddee;
+}
