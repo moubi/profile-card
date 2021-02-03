@@ -25,3 +25,6 @@ Then open [http://localhost:3000](http://localhost:3000) to view the app in the 
 yarn test
 ```
 Launches the test runner in interactive watch mode.
+
+## Credits
+This card design is inspired by [alvaromontoro](https://github.com/alvaromontoro)'s [Player/User Cards](https://codepen.io/alvaromontoro/pen/ebPEWb)
