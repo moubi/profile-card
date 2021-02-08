@@ -19,9 +19,9 @@ export default function App() {
             "Vue",
             "Webpack",
             "NodeJs",
-            "Webpack"
+            "Webpack",
           ],
-          creationDate: "01.01.2021"
+          creationDate: "01.01.2021",
         }}
       />
     </div>
