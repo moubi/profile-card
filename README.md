@@ -28,3 +28,5 @@ Launches the test runner in interactive watch mode.
 
 ## Credits
 This card design is inspired by [alvaromontoro](https://github.com/alvaromontoro)'s [Player/User Cards](https://codepen.io/alvaromontoro/pen/ebPEWb)
+
+Find more React and Front-end guides at [webup.org/blog](https://webup.org/blog)
