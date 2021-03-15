@@ -21,7 +21,7 @@ describe("ProfileCard", () => {
     expect(
       <ProfileCard {...props} />,
       "when mounted",
-      "to exhaustively satisfy",
+      "to satisfy",
       <div className="ProfileCard">
         <div className="avatar">
           <h2>Justin Case</h2>
@@ -47,8 +47,8 @@ describe("ProfileCard", () => {
     expect(
       <ProfileCard {...props} />,
       "when mounted",
-      "queried for first",
-      ".status",
+      "queried for test id",
+      "status",
       "to have class",
       "online"
     );
@@ -61,8 +61,8 @@ describe("ProfileCard", () => {
       expect(
         <ProfileCard {...props} />,
         "when mounted",
-        "queried for first",
-        "p",
+        "queried for test id",
+        "bio-text",
         "to have text",
         "This is a bio text"
       );
@@ -124,15 +124,10 @@ describe("ProfileCard", () => {
 
       expect(
         component,
-        "queried for first",
-        ".details",
-        "to exhaustively satisfy",
-        <div className="details technologies">
-          <h3>Technologies</h3>
-          <div>
-            <button>View Bio</button>
-          </div>
-        </div>
+        "queried for test id",
+        "details",
+        "to have class",
+        "technologies"
       );
     });
 
@@ -147,8 +142,8 @@ describe("ProfileCard", () => {
 
       expect(
         component,
-        "queried for first",
-        ".location",
+        "queried for test id",
+        "location",
         "to have text",
         "Location: Copenhagen, Denmark"
       );
@@ -165,14 +160,16 @@ describe("ProfileCard", () => {
 
       expect(
         component,
-        "queried for first",
-        ".technologies ul",
-        "to exhaustively satisfy",
-        <ul>
-          <li>JavaScript</li>
-          <li>React</li>
-          <li>NodeJs</li>
-        </ul>
+        "queried for test id",
+        "technologies-list",
+        "to satisfy",
+        {
+          children: [
+            { children: "JavaScript" },
+            { children: "React" },
+            { children: "NodeJs" },
+          ],
+        }
       );
     });
 

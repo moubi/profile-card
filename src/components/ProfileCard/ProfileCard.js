@@ -33,13 +33,21 @@ export default function ProfileCard({
         <h2>{name}</h2>
         <i className="photo" />
         <span>{posts} posts</span>
-        <i className={`status ${isOnline ? "online" : "offline"}`} />
+        <i
+          className={`status ${isOnline ? "online" : "offline"}`}
+          data-test-id="status"
+        />
       </div>
-      <div className={`details ${isBioVisible ? "bio" : "technologies"}`}>
+      <div
+        className={`details ${isBioVisible ? "bio" : "technologies"}`}
+        data-test-id="details"
+      >
         {isBioVisible ? (
           <>
             <h3>Bio</h3>
-            <p>{bio !== "" ? bio : "No bio provided yet"}</p>
+            <p data-test-id="bio-text">
+              {bio !== "" ? bio : "No bio provided yet"}
+            </p>
             <div>
               <button onClick={handleBioVisibility}>View Skills</button>
               <p className="joined">Joined: {creationDate}</p>
@@ -49,7 +57,7 @@ export default function ProfileCard({
           <>
             <h3>Technologies</h3>
             {technologies.length > 0 && (
-              <ul>
+              <ul data-test-id="technologies-list">
                 {technologies.map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}
@@ -57,7 +65,11 @@ export default function ProfileCard({
             )}
             <div>
               <button onClick={handleBioVisibility}>View Bio</button>
-              {!!location && <p className="location">Location: {location}</p>}
+              {!!location && (
+                <p className="location" data-test-id="location">
+                  Location: {location}
+                </p>
+              )}
             </div>
           </>
         )}
